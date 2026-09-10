@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P站视频-热门Pixiv视频作品推荐与二次元动画欣赏指南</title>
+    <meta name="description" content="P站视频是二次元爱好者关注的热门话题，这里为你整理Pixiv平台上的优质视频作品推荐、画师动态与动画创作欣赏指南，帮助你快速找到感兴趣的P站视频内容与创作者。">
+    <meta name="keywords" content="P站视频,Pixiv视频,二次元视频,P站画师,动画创作,ACG视频,插画动态">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #faf7ff;
+            color: #2d2a3a;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header */
+        .site-header {
+            background: linear-gradient(135deg, #6a5acd 0%, #8a7ce0 50%, #a78bfa 100%);
+            color: #fff;
+            padding: 14px 0;
+            box-shadow: 0 4px 20px rgba(106, 90, 205, 0.25);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .logo-text span {
+            font-weight: 300;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-left: 6px;
+        }
+        .main-nav {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .main-nav a {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 6px 2px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .main-nav a:hover {
+            border-bottom-color: #fff;
+            color: #fff;
+        }
+        .search-box {
+            display: flex;
+            background: rgba(255, 255, 255, 0.18);
+            border-radius: 24px;
+            padding: 4px 4px 4px 16px;
+            align-items: center;
+            backdrop-filter: blur(6px);
+        }
+        .search-box input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 0.9rem;
+            width: 160px;
+            padding: 4px 0;
+        }
+        .search-box input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .search-box button {
+            background: #fff;
+            border: none;
+            color: #6a5acd;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .search-box button:hover {
+            background: #f0edff;
+        }
+        /* Hero */
+        .hero {
+            background: linear-gradient(120deg, #f1edff 0%, #e8e2ff 100%);
+            padding: 48px 0 36px;
+            text-align: center;
+            border-bottom: 1px solid #e4def5;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #4a3f8a;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        .hero p {
+            font-size: 1.05rem;
+            color: #5a5380;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .hero-tags a {
+            background: #fff;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            color: #5a4ab0;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(106, 90, 205, 0.1);
+            transition: 0.2s;
+            border: 1px solid #dcd2f5;
+        }
+        .hero-tags a:hover {
+            background: #6a5acd;
+            color: #fff;
+            border-color: #6a5acd;
+        }
+        /* 内容区 */
+        .content-section {
+            padding: 40px 0;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .section-title h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #3d3470;
+            position: relative;
+            padding-left: 16px;
+        }
+        .section-title h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 6px;
+            height: 22px;
+            background: #6a5acd;
+            border-radius: 4px;
+        }
+        .section-title .more-link {
+            margin-left: auto;
+            font-size: 0.9rem;
+            color: #6a5acd;
+            font-weight: 500;
+            border-bottom: 1px dashed #b6a8e8;
+        }
+        .section-title .more-link:hover {
+            color: #4a3f8a;
+        }
+        /* 视频卡片 */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .video-card {
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(80, 70, 130, 0.08);
+            transition: transform 0.25s, box-shadow 0.2s;
+            border: 1px solid #ece7f8;
+        }
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(80, 70, 130, 0.14);
+        }
+        .video-thumb {
+            aspect-ratio: 16 / 10;
+            background: linear-gradient(135deg, #b8a9f0, #8f7ad6);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        .video-thumb.thumb-1 { background: linear-gradient(135deg, #f6a5c0, #c86b9c); }
+        .video-thumb.thumb-2 { background: linear-gradient(135deg, #6ec6ff, #4a7fd4); }
+        .video-thumb.thumb-3 { background: linear-gradient(135deg, #ffdc80, #f5a65b); }
+        .video-thumb.thumb-4 { background: linear-gradient(135deg, #a8e6cf, #5cc9a7); }
+        .video-thumb.thumb-5 { background: linear-gradient(135deg, #d7b9ff, #9d7ee0); }
+        .video-thumb.thumb-6 { background: linear-gradient(135deg, #ffab91, #e5714f); }
+        .video-thumb .play-badge {
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 50%;
+            width: 46px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+            font-size: 1.2rem;
+        }
+        .video-thumb .duration {
+            position: absolute;
+            bottom: 6px;
+            right: 8px;
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            font-size: 0.72rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            letter-spacing: 0.3px;
+        }
+        .video-info {
+            padding: 14px;
+        }
+        .video-info h3 {
+            font-size: 0.98rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 6px;
+            line-height: 1.35;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .video-info .author {
+            font-size: 0.83rem;
+            color: #7a7396;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+        .video-info .author .avatar {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #dcd2f5;
+            display: inline-block;
+        }
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.78rem;
+            color: #9a92b8;
+            border-top: 1px solid #f2eef8;
+            padding-top: 8px;
+        }
+        /* 分类导航 */
+        .category-section {
+            background: #fff;
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+            margin-bottom: 40px;
+        }
+        .cat-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+        }
+        .cat-item {
+            background: #f5f1ff;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: #4f4583;
+            transition: 0.2s;
+            border: 1px solid #e4dcf8;
+        }
+        .cat-item:hover {
+            background: #6a5acd;
+            color: #fff;
+            border-color: #6a5acd;
+            transform: scale(1.04);
+        }
+        /* 双栏区 */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .panel {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            border: 1px solid #f0ecf8;
+        }
+        .panel h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #3d3470;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #ede7ff;
+        }
+        .rank-list {
+            list-style: none;
+        }
+        .rank-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #efeaff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.93rem;
+        }
+        .rank-list li:last-child {
+            border-bottom: none;
+        }
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            background: #6a5acd;
+            color: #fff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .rank-list li:nth-child(2) .rank-num { background: #7b6bd1; }
+        .rank-list li:nth-child(3) .rank-num { background: #8f82da; }
+        .rank-list li:nth-child(n+4) .rank-num { background: #c4bceb; color: #4a3f8a; }
+        /* 画师推荐 */
+        .artist-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .artist-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 8px 10px;
+            border-radius: 12px;
+            background: #faf8ff;
+            transition: 0.2s;
+        }
+        .artist-item:hover {
+            background: #f0ebff;
+        }
+        .artist-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #b9a8f2, #8a6fd8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .artist-info {
+            flex: 1;
+        }
+        .artist-info .name {
+            font-weight: 600;
+            font-size: 0.93rem;
+            color: #333;
+        }
+        .artist-info .desc {
+            font-size: 0.78rem;
+            color: #8a82a8;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .follow-btn {
+            background: #fff;
+            border: 1px solid #6a5acd;
+            color: #6a5acd;
+            padding: 4px 14px;
+            border-radius: 16px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .follow-btn:hover {
+            background: #6a5acd;
+            color: #fff;
+        }
+        /* 指南文本 */
+        .guide-text {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px;
+            margin: 30px 0;
+            border-left: 4px solid #6a5acd;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        .guide-text h2 {
+            font-size: 1.3rem;
+            color: #3d3470;
+            margin-bottom: 12px;
+        }
+        .guide-text p {
+            color: #4a4560;
+            margin-bottom: 14px;
+        }
+        /* FAQ */
+        .faq-section {
+            background: #fff;
+            border-radius: 18px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .faq-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #f0ecf8;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 600;
+            color: #3d3470;
+            margin-bottom: 6px;
+            font-size: 1rem;
+            display: flex;
+            gap: 8px;
+            align-items: baseline;
+        }
+        .faq-q::before {
+            content: 'Q';
+            background: #6a5acd;
+            color: #fff;
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.72rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .faq-a {
+            color: #5a5580;
+            padding-left: 30px;
+            font-size: 0.92rem;
+        }
+        /* 页脚 */
+        .site-footer {
+            background: #2d2843;
+            color: #b8b0d4;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+        .footer-col {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-col h4 {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col li {
+            margin-bottom: 8px;
+            font-size: 0.87rem;
+        }
+        .footer-col a:hover {
+            color: #fff;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #3f3855;
+            padding-top: 20px;
+            font-size: 0.82rem;
+            color: #8f86b0;
+        }
+        /* 响应式 */
+        @media (max-width: 992px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+            .footer-col {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+            .main-nav {
+                justify-content: center;
+                gap: 14px;
+            }
+            .search-box {
+                width: 100%;
+                justify-content: center;
+            }
+            .search-box input {
+                flex: 1;
+                max-width: 220px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .video-grid {
+                grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+                gap: 14px;
+            }
+            .cat-list {
+                gap: 8px;
+            }
+            .cat-item {
+                padding: 8px 14px;
+                font-size: 0.85rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 14px;
+            }
+            .footer-col {
+                grid-template-columns: 1fr;
+            }
+            .video-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo-area">
+            <div class="logo-icon">P</div>
+            <div class="logo-text">P站视频<span>二次元创作社区</span></div>
+        </div>
+        <nav>
+            <ul class="main-nav">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">热门视频</a></li>
+                <li><a href="#">画师推荐</a></li>
+                <li><a href="#">动画创作</a></li>
+                <li><a href="#">排行榜</a></li>
+                <li><a href="#">关于</a></li>
+            </ul>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="搜索P站视频、画师...">
+            <button>搜索</button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>发现优质P站视频与二次元动画创作</h1>
+        <p>Pixiv作为全球知名的二次元创作分享平台，聚集了大量优秀画师与动画作者。我们为你精选值得观看的P站视频内容，带你探索充满创意与想象力的视觉世界。</p>
+        <div class="hero-tags">
+            <a href="#">今日热门</a>
+            <a href="#">动画短片</a>
+            <a href="#">插画过程</a>
+            <a href="#">VOCALOID</a>
+            <a href="#">原创作品</a>
+        </div>
+    </div>
+</section>
+
+<main>
+    <div class="container">
+        <!-- 分类导航 -->
+        <section class="category-section">
+            <div class="cat-list">
+                <a href="#" class="cat-item">全部视频</a>
+                <a href="#" class="cat-item">动画短片</a>
+                <a href="#" class="cat-item">绘画过程</a>
+                <a href="#" class="cat-item">音声作品</a>
+                <a href="#" class="cat-item">MMD</a>
+                <a href="#" class="cat-item">手书</a>
+                <a href="#" class="cat-item">静止画MAD</a>
+                <a href="#" class="cat-item">3D作品</a>
+                <a href="#" class="cat-item">教程分享</a>
+                <a href="#" class="cat-item">音乐创作</a>
+            </div>
+        </section>
+
+        <!-- 热门视频推荐 -->
+        <section class="content-section">
+            <div class="section-title">
+                <h2>🔥 本周热门P站视频</h2>
+                <a href="#" class="more-link">查看更多 ›</a>
+            </div>
+            <div class="video-grid">
+                <article class="video-card">
+                    <div class="video-thumb thumb-1">
+                        <div class="play-badge">▶</div>
+                        <span class="duration">04:32</span>
+                    </div>
+                    <div class="video-info">
+                        <h3>【原创动画】星空的约定 - 治愈系短篇</h3>
+                        <div class="author"><span class="avatar"></span> 星野光</div>
+                        <div class="video-meta">
+                            <span>❤ 12.4万</span>
+                            <span>▶ 86.2万</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="video-card">
+                    <div class="video-thumb thumb-2">
+                        <div class="play-badge">▶</div>
+                        <span class="duration">07:18</span>
+                    </div>
+                    <div class="video-info">
+                        <h3>【绘画过程】水彩风格少女插画绘制实录</h3>
+                        <div class="author"><span class="avatar"></span> 森语Mori</div>
+                        <div class="video-meta">
+                            <span>❤ 8.7万</span>
+                            <span>▶ 45.3万</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="video-card">
+                    <div class="video-thumb thumb-3">
+                        <div class="play-badge">▶</div>
+                        <span class="duration">03:45</span>
+                    </div>
+                    <div class="video-info">
+                        <h3>【手书】夏日蝉鸣 - 青春群像手绘动画</h3>
+                        <div class="author"><span class="avatar"></span> 柠檬苏打</div>
+                        <div class="video-meta">
+                            <span>❤ 5.2万</span>
+                            <span>▶ 32.8万</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="video-card">
+                    <div class="video-thumb thumb-4">
+                        <div class="play-badge">▶</div>
+                        <span class="duration">06:20</span>
+                    </div>
+                    <div class="video-info">
+                        <h3>【MMD】初音未来 - 樱花舞步 4K高清</h3>
+                        <div class="author"><span class="avatar"></span> MikuFan</div>
+                        <div class="video-meta">
+                            <span>❤ 9.1万</span>
+                            <span>▶ 67.5万</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="video-card">
+                    <div class="video-thumb thumb-5">
+                        <div class="play-badge">▶</div>
+                        <span class="duration">02:58</span>
+                    </div>
+                    <div class="video-info">
+                        <h3>【静止画MAD】黄昏列车 - 情绪向剪辑</h3>
+                        <div class="author"><span class="avatar"></span> 夜行记录</div>
+                        <div class="video-meta">
+                            <span>❤ 3.8万</span>
+                            <span>▶ 21.6万</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="video-card">
+                    <div class="video-thumb thumb-6">
+                        <div class="play-badge">▶</div>
+                        <span class="duration">05:12</span>
+                    </div>
+                    <div class="video-info">
+                        <h3>【VOCALOID】原创曲「青空回响」MV</h3>
+                        <div class="author"><span class="avatar"></span> 调音师K</div>
+                        <div class="video-meta">
+                            <span>❤ 6.4万</span>
+                            <span>▶ 39.7万</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 榜单与画师 -->
+        <div class="two-col">
+            <section class="panel">
+                <h3>📈 P站视频人气榜</h3>
+                <ul class="rank-list">
+                    <li><span class="rank-num">1</span> 【动画】迷途之森的精灵 - 奇幻冒险</li>
+                    <li><span class="rank-num">2</span> 【绘画】厚涂机甲少女全流程</li>
+                    <li><span class="rank-num">3</span> 【手书】毕业那天 - 催泪群像</li>
+                    <li><span class="rank-num">4</span> 【MMD】爱丽丝梦游仙境 - 场景舞蹈</li>
+                    <li><span class="rank-num">5</span> 【教程】SAI2画光影技巧分享</li>
+                    <li><span class="rank-num">6</span> 【音声】雨声与咖啡馆的日常</li>
+                </ul>
+            </section>
+            <section class="panel">
+                <h3>👩‍🎨 人气P站画师推荐</h3>
+                <div class="artist-cards">
+                    <div class="artist-item">
+                        <div class="artist-avatar">M</div>
+                        <div class="artist-info">
+                            <div class="name">Mocha</div>
+                            <div class="desc">擅长清新治愈系插画与动画短片</div>
+                        </div>
+                        <button class="follow-btn">+ 关注</button>
+                    </div>
+                    <div class="artist-item">
+                        <div class="artist-avatar">R</div>
+                        <div class="artist-info">
+                            <div class="name">Rin</div>
+                            <div class="desc">厚涂风格，场景宏大，动态感强</div>
+                        </div>
+                        <button class="follow-btn">+ 关注</button>
+                    </div>
+                    <div class="artist-item">
+                        <div class="artist-avatar">S</div>
+                        <div class="artist-info">
+                            <div class="name">苏打Soda</div>
+                            <div class="desc">脑洞大开的创意手书作者</div>
+                        </div>
+                        <button class="follow-btn">+ 关注</button>
+                    </div>
+                    <div class="artist-item">
+                        <div class="artist-avatar">A</div>
+                        <div class="artist-info">
+                            <div class="name">Aki</div>
+                            <div class="desc">VOCALOID音乐视频创作者</div>
+                        </div>
+                        <button class="follow-btn">+ 关注</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 指南 -->
+        <section class="guide-text">
+            <h2>如何在Pixiv上发现更多优质视频？</h2>
+            <p>Pixiv平台上的视频内容统称为「P站视频」，涵盖动画短片、绘画过程、MMD、手书等多种类型。想要高效找到自己喜欢的作品，可以尝试以下方法：</p>
+            <p>利用平台的标签系统，例如「动画」「绘画过程」「MMD」等关键词进行筛选；关注你喜欢的画师，及时获取他们的新作品动态；查看每日排行榜，快速了解当前社区最受欢迎的视频内容。此外，Pixiv的「发现」功能也会根据你的浏览历史推荐相似风格的创作者和作品。</p>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <h2 style="font-size:1.4rem; color:#3d3470; margin-bottom:16px;">关于P站视频的常见问题</h2>
+            <div class="faq-item">
+                <div class="faq-q">P站视频和普通视频网站有什么区别？</div>
+                <div class="faq-a">Pixiv本身是插画和漫画分享社区，视频功能是创作者用来展示动画作品、绘画过程或动态插画的延伸板块。内容更偏向二次元艺术创作，与普通视频网站的娱乐内容定位不同。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">观看P站视频需要付费吗？</div>
+                <div class="faq-a">大部分视频可以免费观看，但部分创作者会设置会员限定内容或付费作品集。具体情况取决于每位创作者的个人设定。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">能否下载P站视频到本地？</div>
+                <div class="faq-a">根据Pixiv的使用条款，未经创作者允许下载或转载作品是不被提倡的。建议通过平台自带的收藏功能保存喜欢的内容，尊重创作者的劳动成果。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">如何提升自己视频的曝光度？</div>
+                <div class="faq-a">为作品添加准确且热门的标签、保持稳定的更新频率、积极与粉丝互动，并参与平台的活动话题，都有助于提升作品的可见度。</div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-col">
+            <div>
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">网站介绍</a></li>
+                    <li><a href="#">联系我们</a></li>
+                    <li><a href="#">加入我们</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>内容分类</h4>
+                <ul>
+                    <li><a href="#">动画短片</a></li>
+                    <li><a href="#">绘画过程</a></li>
+                    <li><a href="#">MMD专区</a></li>
+                    <li><a href="#">手书作品</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>创作支持</h4>
+                <ul>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">版权说明</a></li>
+                    <li><a href="#">社区规范</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">微博</a></li>
+                    <li><a href="#">B站</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 P站视频指南 · 本网站为二次元爱好者提供Pixiv视频内容推荐与交流，所有作品版权归原作者所有</p>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+              </html>
