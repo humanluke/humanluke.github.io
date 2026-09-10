@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狂躁型精神病-症状表现与科学应对指南</title>
+    <meta name="description" content="了解狂躁型精神病（双相情感障碍躁狂发作）的核心症状、识别方法、治疗原则与家庭护理策略，提供科学严谨的精神健康科普信息与就医指引。">
+    <meta name="keywords" content="狂躁型精神病,躁狂症,双相情感障碍,躁狂发作,精神疾病,心理健康,治疗">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: #f4f7fc;
+            color: #1a2b3c;
+            line-height: 1.7;
+        }
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* header */
+        .site-header {
+            background: linear-gradient(135deg, #0f2b4c 0%, #1b4a6b 100%);
+            padding: 16px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: #6fc2d0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #0f2b4c;
+            font-weight: bold;
+        }
+        .site-name {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #d0e4f0;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-links a:hover {
+            color: #ffffff;
+            border-bottom-color: #6fc2d0;
+        }
+        /* hero */
+        .hero-section {
+            background: linear-gradient(160deg, #e8f0fa 0%, #d4e4f3 100%);
+            padding: 60px 0 50px;
+            border-bottom: 1px solid #cbdae8;
+        }
+        .hero-content {
+            max-width: 850px;
+        }
+        .hero-tag {
+            display: inline-block;
+            background: #1b4a6b;
+            color: #ffffff;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+        .hero-content h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #0f2b4c;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+        .hero-desc {
+            font-size: 1.2rem;
+            color: #2c4a63;
+            margin-bottom: 30px;
+            max-width: 780px;
+        }
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+        .btn-primary {
+            background: #1b4a6b;
+            color: #ffffff;
+            box-shadow: 0 4px 10px rgba(27,74,107,0.2);
+        }
+        .btn-primary:hover {
+            background: #0f2b4c;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #1b4a6b;
+            border: 2px solid #1b4a6b;
+        }
+        .btn-outline:hover {
+            background: #1b4a6b;
+            color: #fff;
+        }
+        /* quick info bar */
+        .quick-info {
+            background: #ffffff;
+            padding: 26px 0;
+            border-bottom: 1px solid #dbe4ed;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+        .info-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+        .info-icon {
+            font-size: 2.2rem;
+            line-height: 1;
+            margin-top: 4px;
+        }
+        .info-item h3 {
+            font-size: 1.1rem;
+            color: #0f2b4c;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .info-item p {
+            font-size: 0.95rem;
+            color: #3f5a70;
+        }
+        /* main content sections */
+        .content-section {
+            padding: 50px 0;
+            background: #ffffff;
+        }
+        .content-section.alt-bg {
+            background: #f4f8fc;
+        }
+        .section-header {
+            margin-bottom: 40px;
+        }
+        .section-header .eyebrow {
+            color: #1b4a6b;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f2b4c;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .section-header p {
+            color: #3f5a70;
+            max-width: 800px;
+            font-size: 1.05rem;
+        }
+        /* cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 30px 24px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+            border: 1px solid #e2ebf3;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .card h3 {
+            font-size: 1.3rem;
+            color: #0f2b4c;
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+        .card p {
+            color: #3d5568;
+            font-size: 0.98rem;
+            margin-bottom: 12px;
+        }
+        .card ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+        .card li {
+            margin-bottom: 6px;
+            color: #2c4a63;
+        }
+        /* symptom list */
+        .symptom-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 40px;
+            margin-top: 20px;
+        }
+        .symptom-item {
+            background: #f8fbfe;
+            padding: 20px 22px;
+            border-left: 5px solid #1b4a6b;
+            border-radius: 8px;
+        }
+        .symptom-item h3 {
+            font-size: 1.15rem;
+            color: #0f2b4c;
+            margin-bottom: 8px;
+        }
+        .symptom-item p {
+            font-size: 0.98rem;
+            color: #3d5568;
+        }
+        /* two column layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        .two-col h3 {
+            color: #0f2b4c;
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+        }
+        .two-col p {
+            margin-bottom: 16px;
+        }
+        .step-list {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+        .step-list li {
+            counter-increment: step-counter;
+            margin-bottom: 20px;
+            padding-left: 50px;
+            position: relative;
+            font-size: 1rem;
+            color: #2c4a63;
+        }
+        .step-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: -2px;
+            width: 34px;
+            height: 34px;
+            background: #1b4a6b;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        /* faq */
+        .faq-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border-left: 4px solid #1b4a6b;
+        }
+        .faq-item h3 {
+            font-size: 1.15rem;
+            color: #0f2b4c;
+            margin-bottom: 12px;
+            cursor: pointer;
+        }
+        .faq-item p {
+            color: #3d5568;
+            font-size: 1rem;
+        }
+        /* resource box */
+        .resource-panel {
+            background: #e3eef7;
+            border-radius: 16px;
+            padding: 36px 32px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .resource-panel h3 {
+            color: #0f2b4c;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+        .resource-panel p {
+            color: #2c4a63;
+            max-width: 500px;
+        }
+        .emergency-note {
+            background: #fff3e0;
+            border: 2px solid #e65100;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+        /* footer */
+        .site-footer {
+            background: #0f2b4c;
+            color: #b0c9dd;
+            padding: 36px 0 20px;
+            margin-top: 40px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #1e4160;
+            margin-bottom: 20px;
+        }
+        .footer-grid h4 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+        .footer-grid p {
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        .footer-links a {
+            color: #b0c9dd;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+        .copyright {
+            text-align: center;
+            font-size: 0.9rem;
+            padding-top: 15px;
+        }
+        /* responsive */
+        @media (max-width: 900px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .nav-links {
+                gap: 16px;
+            }
+            .two-col, .symptom-list {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+        @media (max-width: 600px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+            .hero-section {
+                padding: 40px 0;
+            }
+            .hero-content h1 {
+                font-size: 1.7rem;
+            }
+            .hero-desc {
+                font-size: 1.05rem;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+            .resource-panel {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrapper header-inner">
+            <div class="logo-area">
+                <div class="logo-icon">心</div>
+                <span class="site-name">心康指南</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#overview">疾病概述</a></li>
+                    <li><a href="#symptoms">核心症状</a></li>
+                    <li><a href="#treatment">治疗路径</a></li>
+                    <li><a href="#care">家庭护理</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero 首屏 -->
+        <section class="hero-section" id="overview">
+            <div class="wrapper">
+                <div class="hero-content">
+                    <span class="hero-tag">精神健康科普 · 专业中立</span>
+                    <h1>狂躁型精神病：识别、理解与科学应对</h1>
+                    <p class="hero-desc">狂躁型精神病（临床上多指双相情感障碍的躁狂发作期）并非简单的"情绪波动"或"性格问题"，而是一种需要严肃对待的精神疾病。了解其真实表现，是走向正确治疗与康复的第一步。</p>
+                    <div class="hero-cta">
+                        <a href="#symptoms" class="btn btn-primary">查看核心症状</a>
+                        <a href="#treatment" class="btn btn-outline">了解科学治疗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 快速了解 -->
+        <section class="quick-info">
+            <div class="wrapper">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon">🧠</div>
+                        <div>
+                            <h3>疾病本质</h3>
+                            <p>一种严重的精神障碍，以情感高涨或易激惹、思维奔逸、活动增多等为主要表现。</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">⚠️</div>
+                        <div>
+                            <h3>关键特征</h3>
+                            <p>发作时患者可能精力异常旺盛、睡眠需求减少、行为冲动，甚至出现幻觉或妄想。</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">💊</div>
+                        <div>
+                            <h3>治疗原则</h3>
+                            <p>以药物治疗为基础（心境稳定剂、抗精神病药），结合心理治疗与康复支持。</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🏥</div>
+                        <div>
+                            <h3>就医建议</h3>
+                            <p>一旦发现可疑症状，应尽快前往精神专科医院或综合医院精神科进行评估诊断。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 症状识别 -->
+        <section class="content-section" id="symptoms">
+            <div class="wrapper">
+                <div class="section-header">
+                    <div class="eyebrow">症状识别</div>
+                    <h2>狂躁型精神病的典型表现</h2>
+                    <p>躁狂发作的症状通常持续至少一周，且明显影响日常生活、工作与人际关系。以下表现若同时出现多种，应高度警惕。</p>
+                </div>
+                <div class="symptom-list">
+                    <div class="symptom-item">
+                        <h3>情绪异常高涨或易激惹</h3>
+                        <p>患者可能表现出持续异常的愉快、兴奋，或极度烦躁、易怒，情绪反应与所处环境明显不协调。</p>
+                    </div>
+                    <div class="symptom-item">
+                        <h3>思维奔逸与言语增多</h3>
+                        <p>思维联想速度加快，话题快速转换，说话滔滔不绝，严重时可能出现音联、意联或破裂性思维。</p>
+                    </div>
+                    <div class="symptom-item">
+                        <h3>活动增多与精力过剩</h3>
+                        <p>目标导向活动明显增加，可能同时开展多项计划，但常常有始无终。睡眠需求显著减少却不感疲劳。</p>
+                    </div>
+                    <div class="symptom-item">
+                        <h3>冲动行为与判断力下降</h3>
+                        <p>可能出现挥霍金钱、鲁莽投资、冲动性社交行为、过度慷慨或冒险驾驶等不计后果的行为。</p>
+                    </div>
+                    <div class="symptom-item">
+                        <h3>自负夸大或被害观念</h3>
+                        <p>自我评价过高，认为自己有特殊才能或权力。部分患者可能出现被害妄想或关系妄想。</p>
+                    </div>
+                    <div class="symptom-item">
+                        <h3>精神病性症状（重症）</h3>
+                        <p>严重躁狂发作时可出现幻听、幻视或妄想，内容多与夸大或被害主题一致，此时病情更为复杂。</p>
+                    </div>
+                </div>
+                <div class="emergency-note">
+                    <strong>紧急提醒：</strong> 若患者出现自伤、伤人、毁物行为，或完全无法自我控制，请立即拨打急救电话或送往精神专科医院急诊。
+                </div>
+            </div>
+        </section>
+
+        <!-- 疾病认知与成因 -->
+        <section class="content-section alt-bg">
+            <div class="wrapper">
+                <div class="two-col">
+                    <div>
+                        <div class="section-header" style="margin-bottom: 20px;">
+                            <div class="eyebrow">科学认知</div>
+                            <h2>狂躁型精神病的成因与误解澄清</h2>
+                        </div>
+                        <p>狂躁型精神病（双相障碍躁狂发作）的确切病因尚不完全明确，但研究普遍认为与以下因素有关：</p>
+                        <ul style="padding-left: 20px; margin-bottom: 20px; color:#2c4a63;">
+                            <li><strong>生物学因素：</strong>大脑神经递质（如多巴胺、去甲肾上腺素）功能紊乱。</li>
+                            <li><strong>遗传因素：</strong>家族中有精神疾病史者患病风险相对增加。</li>
+                            <li><strong>心理社会因素：</strong>重大生活事件、长期压力、睡眠节律紊乱可能诱发或加重。</li>
+                            <li><strong>脑结构与功能异常：</strong>部分患者存在前额叶、边缘系统等脑区功能改变。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="card" style="background: #eef4fa; box-shadow: none; border: 1px solid #c8daea;">
+                            <h3 style="color: #0f2b4c;">❌ 常见误解</h3>
+                            <ul style="list-style: none; padding: 0; margin-top: 12px;">
+                                <li style="margin-bottom: 14px;">✖ "就是脾气大/性格不好" —— 实际是疾病症状，患者难以自控。</li>
+                                <li style="margin-bottom: 14px;">✖ "想开点就好了" —— 需要专业治疗，自行调节无法治愈。</li>
+                                <li style="margin-bottom: 14px;">✖ "得了这病就废了" —— 规范治疗下许多患者可回归正常生活。</li>
+                                <li style="margin-bottom: 14px;">✖ "只有成年人才会得" —— 青少年甚至儿童也可能发病。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 治疗与干预 -->
+        <section class="content-section" id="treatment">
+            <div class="wrapper">
+                <div class="section-header">
+                    <div class="eyebrow">治疗路径</div>
+                    <h2>科学治疗：从急性期到维持期</h2>
+                    <p>狂躁型精神病的治疗强调"全病程管理"。急性期以快速控制症状、保障安全为目标，恢复期与维持期以预防复发、恢复功能为核心。</p>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-icon">💊</div>
+                        <h3>药物治疗（基石）</h3>
+                        <p>常用药物包括：</p>
+                        <ul>
+                            <li>心境稳定剂（如锂盐、丙戊酸盐）</li>
+                            <li>非典型抗精神病药</li>
+                            <li>苯二氮䓬类（短期辅助镇静）</li>
+                        </ul>
+                        <p style="margin-top: 10px; font-size: 0.9rem;">用药必须由精神科医生个体化制定，切勿自行停药或调整剂量。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🧩</div>
+                        <h3>心理治疗（辅助）</h3>
+                        <p>认知行为疗法（CBT）、家庭聚焦治疗、心理教育等有助于：</p>
+                        <ul>
+                            <li>提高治疗依从性</li>
+                            <li>识别早期复发信号</li>
+                            <li>改善家庭沟通与支持</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">⚡</div>
+                        <h3>物理治疗（特定情况）</h3>
+                        <p>对于严重躁狂伴精神病性症状、药物治疗无效或禁忌的患者，电抽搐治疗（ECT）是快速有效的选择。需严格评估后实施。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🏡</div>
+                        <h3>住院治疗（必要时）</h3>
+                        <p>当患者存在自伤或伤人风险、完全失去自知力或家庭无法监护时，住院治疗是保障安全的最佳方案。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 家庭护理与康复 -->
+        <section class="content-section alt-bg" id="care">
+            <div class="wrapper">
+                <div class="section-header">
+                    <div class="eyebrow">家庭支持</div>
+                    <h2>家属如何科学护理与陪伴</h2>
+                    <p>家庭是患者康复的重要支持系统。正确的护理方式能显著降低复发风险，改善预后。</p>
+                </div>
+                <div class="two-col">
+                    <div>
+                        <h3>✅ 护理要点</h3>
+                        <ul class="step-list">
+                            <li>监督规律服药，观察药物不良反应，定期陪同复诊。</li>
+                            <li>帮助患者建立规律作息，确保充足睡眠，避免熬夜与过度劳累。</li>
+                            <li>减少刺激与冲突，避免与患者争辩或激惹其情绪。</li>
+                            <li>观察情绪与行为变化，记录"心情日记"，识别早期复发征兆。</li>
+                            <li>鼓励参与适度社交与康复活动，但避免过度兴奋的场合。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>🚩 复发预警信号</h3>
+                        <div style="background: #fef7e0; border-radius: 12px; padding: 20px; border: 1px solid #f0d78c;">
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 10px;">🔴 睡眠时间明显减少但仍精力旺盛</li>
+                                <li style="margin-bottom: 10px;">🔴 说话速度加快，话题跳跃</li>
+                                <li style="margin-bottom: 10px;">🔴 过度乐观，做出不切实际计划</li>
+                                <li style="margin-bottom: 10px;">🔴 花钱明显增多，行为冲动</li>
+                                <li style="margin-bottom: 10px;">🔴 对批评极度敏感，易怒</li>
+                            </ul>
+                            <p style="margin-top: 12px; font-weight: 500;">一旦出现上述信号，应尽快联系主治医生调整治疗方案。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 FAQ -->
+        <section class="content-section" id="faq">
+            <div class="wrapper">
+                <div class="section-header">
+                    <div class="eyebrow">常见问题</div>
+                    <h2>关于狂躁型精神病的核心疑问</h2>
+                </div>
+                <div class="faq-wrap">
+                    <div class="faq-item">
+                        <h3>狂躁型精神病能治好吗？</h3>
+                        <p>经过系统、规范的治疗，绝大多数患者的症状可以得到有效控制，并能维持良好的社会功能。但该病常呈发作性病程，需要长期维持治疗以预防复发。部分患者可能需要终身服药。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>狂躁发作时患者有自知力吗？</h3>
+                        <p>在躁狂发作的急性期，患者往往缺乏自知力，不认为自己有病，甚至觉得状态"前所未有地好"。这正是需要家属强制送医的重要原因之一——患者无法自行做出理性就医决定。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>患者拒绝服药怎么办？</h3>
+                        <p>首先理解拒绝的原因（副作用、病耻感、缺乏自知力等），然后与医生沟通调整药物方案。对于缺乏自知力的急性期患者，可能需要在住院条件下进行强制治疗，这也是保障患者权益的必要措施。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>狂躁型精神病与精神分裂症有何区别？</h3>
+                        <p>这是两种不同的疾病。狂躁型精神病（双相障碍躁狂发作）的核心是情感障碍，思维和行为异常与高涨或易激惹的情绪一致；精神分裂症则以思维、知觉、情感的不协调为特征。但重症躁狂可能出现类似精神分裂症的症状，需要专业医生鉴别。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>躁狂发作后一定会抑郁吗？</h3>
+                        <p>双相障碍的特点就是躁狂与抑郁交替或混合发作。许多患者在躁狂发作后的一段时间内会转入抑郁期，因此躁狂控制后的抑郁预防与监测同样重要。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 就医资源引导 -->
+        <section class="content-section" style="padding-top: 20px;">
+            <div class="wrapper">
+                <div class="resource-panel">
+                    <div>
+                        <h3>需要专业帮助？</h3>
+                        <p>请务必前往正规医疗机构就诊。精神科医生会通过详细访谈、量表评估及必要的躯体检查来明确诊断。</p>
+                        <p style="margin-top: 12px;"><strong>就诊科室：</strong> 精神科 / 心理医学科（综合医院）或精神专科医院</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <p style="font-size: 0.9rem; margin-bottom: 8px;">全国心理援助热线</p>
+                        <p style="font-size: 1.6rem; font-weight: 700; color: #0f2b4c;">12356</p>
+                        <p style="font-size: 0.85rem;">（部分地区已启用，具体以当地为准）</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+            <div class="footer-grid">
+                <div>
+                    <h4>心康指南</h4>
+                    <p>致力于提供严谨、科学、有温度的精神心理健康科普信息。我们强调：本文内容仅供参考，不能替代专业医疗建议。如有疑问请咨询专业医生。</p>
+                </div>
+                <div>
+                    <h4>内容导航</h4>
+                    <ul class="footer-links">
+                        <li><a href="#overview">疾病概述</a></li>
+                        <li><a href="#symptoms">核心症状</a></li>
+                        <li><a href="#treatment">治疗方式</a></li>
+                        <li><a href="#care">家庭护理</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>重要提示</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">就医指南</a></li>
+                        <li><a href="#">药物信息</a></li>
+                        <li><a href="#">心理援助</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 心康指南 · 本页信息仅供科普参考，不构成诊疗建议
+            </div>
+        </div>
+    </footer>
+</body>
+  </html>
